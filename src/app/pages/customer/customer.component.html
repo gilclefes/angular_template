@@ -1,3 +1,35 @@
-<p>
-  customer works!
-</p>
+<form [formGroup]="userForm" class="form-horizontal">
+  <div class="mb-3">
+    <label for="first-name" class="form-label">First Name: </label>
+    <input
+      id="first-name"
+      type="text"
+      formControlName="firstname"
+      required
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="last-name" class="form-label">Last Name: </label>
+    <input
+      id="last-name"
+      type="text"
+      formControlName="lastname"
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="last-name" class="form-label">Email Address: </label>
+    <input
+      id="last-name"
+      type="email"
+      formControlName="emailaddress"
+      class="form-control"
+    />
+  </div>
+
+  <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+</form>
