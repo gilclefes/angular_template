@@ -1,0 +1,44 @@
+<form [formGroup]="userForm" class="form-horizontal">
+  <h2>Product Details</h2>
+  <hr />
+
+  <div class="mb-0">
+    <label for="first-name" class="form-label">Name: </label>
+    <input type="text" formControlName="name" required class="form-control" />
+  </div>
+
+  <div class="form-group">
+    <label for="last-name" class="form-label">Category: </label>
+
+    <select
+      class="form-control"
+      aria-label="Default select example"
+      formControlName="category"
+    >
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+
+  <div class="mb-0">
+    <label for="last-name" class="form-label">Decription: </label>
+    <textarea
+      type="text"
+      formControlName="description"
+      class="form-control"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <div class="checkbox">
+      <label class="checkbox-inline"
+        >Status <input type="checkbox" value="" formControlName="status"
+      /></label>
+    </div>
+  </div>
+
+  <p>Complete the form to enable button.</p>
+  <button type="submit" [disabled]="!userForm.valid">Submit</button>
+</form>
